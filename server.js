@@ -1,8 +1,17 @@
 // initialize the server
 const express = require('express');
 
+// db
+const connectDB = require('./config/db');
+
 // initialize a server object
 const app = express();
+
+// Connect Database
+connectDB();
+
+// Init Middleware, request can accept body data
+app.use(express.json({ extended: false }));
 
 app.get('/', (req, res) =>
   res.json({ msg: 'Welcome to the contact book API...' })
