@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import Contacts from '../contacts/Contacts';
 import ContactForm from '../contacts/ContactForm';
 import ContactFilter from '../contacts/ContactFilter';
-import PropTypes from 'prop-types';
+import AuthContext from '../../context/auth/authContext';
 
-const Home = (props) => {
+const Home = () => {
+  const authContext = useContext(AuthContext);
+
+  useEffect(() => {
+    authContext.loadUser();
+    // eslint-disable-next-line
+  }, []);
+
   return (
     <div className='grid-2'>
       <div>
@@ -17,7 +24,5 @@ const Home = (props) => {
     </div>
   );
 };
-
-Home.propTypes = {};
 
 export default Home;
