@@ -1,0 +1,4 @@
+{
+  "mongoURI": "mongodb+srv://production123:production123@contactbook.gru3e.mongodb.net/production?retryWrites=true&w=majority",
+  "jwtSecret": "production"
+}
